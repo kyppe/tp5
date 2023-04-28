@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etudaint{% endblock %}
+
+{% block body %}
+    <h1>Etudaint</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ etudaint.id }}</td>
+            </tr>
+            <tr>
+                <th>Mone</th>
+                <td>{{ etudaint.mone }}</td>
+            </tr>
+            <tr>
+                <th>Instit</th>
+                <td>{{ etudaint.instit }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_etudaint_index') }}">back to list</a>
+
+    <a href="{{ path('app_etudaint_edit', {'id': etudaint.id}) }}">edit</a>
+
+    {{ include('etudaint/_delete_form.html.twig') }}
+{% endblock %}

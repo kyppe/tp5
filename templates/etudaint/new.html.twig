@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Etudaint{% endblock %}
+
+{% block body %}
+    <h1>Create new Etudaint</h1>
+
+    {{ include('etudaint/_form.html.twig') }}
+
+    <a href="{{ path('app_etudaint_index') }}">back to list</a>
+{% endblock %}

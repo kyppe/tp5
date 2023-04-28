@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etudaint index{% endblock %}
+
+{% block body %}
+    <h1>Etudaint index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Mone</th>
+                <th>Instit</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for etudaint in etudaints %}
+            <tr>
+                <td>{{ etudaint.id }}</td>
+                <td>{{ etudaint.mone }}</td>
+                <td>{{ etudaint.instit }}</td>
+                <td>
+                    <a href="{{ path('app_etudaint_show', {'id': etudaint.id}) }}">show</a>
+                    <a href="{{ path('app_etudaint_edit', {'id': etudaint.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_etudaint_new') }}">Create new</a>
+{% endblock %}
